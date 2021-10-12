@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>저는 계산을 해요</title>
+</head>
+<body>
+    <h1>저는 계산기에오</h1>
+    <div id="crt"> </div>
+    <div id="input"> </div>
+    <table border="1">
+        <tr>
+            <td id="na">/</td>
+            <td id="gop">*</td>
+            <td id="pe">-</td>
+            <td id="du">+</td>
+        </tr>
+        <tr>
+            <td id="n7">7</td>
+            <td id="n8">8</td>
+            <td id="n9">9</td>
+            <td id="reset">c</td>
+        </tr>
+        <tr>
+            <td id="n4">4</td>
+            <td id="n5">5</td>
+            <td id="n6">6</td>
+            <td id="backspace"><-</td>
+        </tr>
+        <tr>
+            <td id="n1">1</td>
+            <td id="n2">2</td>
+            <td id="n3">3</td>
+            <td rowspan="2" id="nn">=</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="n0">0</td>
+            <td id="dot">.</td>
+        </tr>
+    </table>
+</body>
+<style>
+    table{
+        height: 100%;
+        text-align: center;
+        font-size: 20pt;
+    }
+    td{
+        height: 70px;
+        width: 100px;
+        padding: 10px;
+    }
+    div{
+        width: 400px;
+        border: black;
+        border-style: solid;
+        border-width: 1px;
+        text-align: right;
+        padding: 10px;
+    }
+    #input{
+        font-weight: bold;
+        font-size: 30px;
+        height: 50px;
+    }
+    #crt{
+        padding: 10px;
+        font-size: 15px;
+        height: 20px;
+    }
+
+</style>
+<script>
+    let input = document.getElementById("input")
+    let na = document.getElementById("na")
+    let gop = document.getElementById("gop")
+    let pe = document.getElementById("pe")
+    let du = document.getElementById("du")
+    let nn = document.getElementById("nn")
+    let bs = document.getElementById("backspace")
+    let dot = document.getElementById("dot")
+    let re = document.getElementById("reset")
+    let crt = document.getElementById("crt")
+    let nList = new Array(10)
+    let current = ""
+    let output = false
+    for(let i=0;i<10;i++){
+        nList[i] = document.getElementById("n"+String(i))
+        nList[i].addEventListener("click",function(){
+            if(renn == true){
+                crt.innerText = ""
+                input.innerText = ""
+                current = ""
+                havedot = false
+            }
+            if(current.charAt(current.length-1)=="."){
+                input.innerText = input.innerText+String(i)
+            }
+            else if(output == false){
+                input.innerText = String(i)
+            }else{
+                input.innerText = input.innerText+String(i)
+            }
+            output = true
+            renn = false
+            current = current + String(i)
+        })
+    }
+    na.addEventListener("click",function(){
+        if(output == true){
+            input.innerText = eval(current)
+            current = input.innerText+"/"
+            crt.innerText = current
+            havedot = false
+            output = false
+            renn = false
+        }
+    })
+    gop.addEventListener("click",function(){
+        if(output == true){
+            input.innerText = eval(current)
+            current = input.innerText+"*"
+            crt.innerText = current
+            havedot = false
+            output = false
+            renn = false
+        }
+    })
+    pe.addEventListener("click",function(){
+        if(output == true){
+            input.innerText = eval(current)
+            current = input.innerText+"-"
+            crt.innerText = current
+            havedot = false
+            output = false
+            renn = false
+        }
+    })
+    du.addEventListener("click",function(){
+        if(output == true){
+            input.innerText = eval(current)
+            current = input.innerText+"+"
+            crt.innerText = current
+            havedot = false
+            output = false
+            renn = false
+        }
+    })
+    let renn = false
+    let save = ""
+    nn.addEventListener("click",function(){
+        if(renn == true){
+            let i = 0 
+            while(isNaN(save[i])==false){
+                i++
+            }
+            current = current + save.substring(i)
+        }
+        if(output == true){
+            input.innerText = eval(current)
+            save = current
+            crt.innerText = current + "="
+            current = String(eval(current))
+            renn = true
+            havedot = false
+        }
+    })
+    bs.addEventListener("click",function(){
+        if(renn == true){
+            crt.innerText = ""
+            input.innerText = ""
+            current = ""
+            output = false
+            havedot = false
+        }
+        if(output == true || current.charAt(current.length-1)=="."){
+            if(current.charAt(current.length-1)=="."){havedot == false}
+            input.innerText = input.innerText.substring(0,input.innerText.length-1)
+            current = input.innerText
+            let a = current.charAt(current.length-1)
+            if(isNaN(a)){
+                output = false
+            }else{
+                output = true
+            }
+        }
+    })
+    let havedot = false
+    dot.addEventListener("click",function(){
+        if(havedot == false){
+            input.innerText = input.innerText+"."
+            current = current + "."
+            output=false
+            havedot = true
+        }
+    })
+    re.addEventListener("click",function(){
+        current = ""
+        input.innerText = ""
+        crt.innerText = ""
+        havedot = false
+        output = false
+    })
+    
+</script>
+</html> 
