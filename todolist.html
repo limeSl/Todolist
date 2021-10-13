@@ -4,13 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todolist </title>
+    <title> 라임슬 비서 </title>
 </head>
 <body>
-    <h1>일정 입력</h1>
-    <form>
-        분류 <input type = "text" name="subject" size="12"><br>
-        시간 <input type = "text" name="date" size="12">
-    </form>
+    <header>
+        일하는 라임슬
+        <button class="top_button" onclick="alert('일정 추가')">&nbsp+&nbsp</button>
+    </header>
+    <nav>
+        <ul class="big_menu">
+            <li>ToDo</li>
+            <ul class="small_menu">
+                <li>오늘</li>
+                <li>내일</li>
+                <li>어제</li>
+                <li>미래</li>
+            </ul>
+            <hr style="margin:10px 0px;">
+            <li>전체 일정</li>
+            <ul class="small_menu">
+                <li>캘린더</li>
+                <li>과목별 정리</li>
+                <li>분류별 보기</li>
+            </ul>
+            <hr style="margin:10px 0px;">
+            <li>일상 관리</li>
+            <ul class="small_menu">
+                <li>취미</li>
+                <li>발전</li>
+                <li>인간관계</li>
+            </ul>
+            <hr style="margin:10px 0px;">
+            <li>잊어버린 일</li>
+        </ul>
+    </nav>
 </body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "lavender";
+    }
+    html,
+    body{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    @font-face {
+        font-family: "lavender";
+        src: url("./lavender.ttf");
+    }
+    header{
+        display: flex;
+        width: 1440px;
+        padding: 15px 30px;
+        background-color: #537e0f;
+        color: white;
+        font-size: 20px;
+    }
+    .top_button{
+        margin-left: auto;
+        padding: 5px;
+        border: 1px solid white;
+        background-color: #ffffff25;
+        color: white;
+        border-radius: 100%;
+    }
+    nav{
+        flex: 1;
+        width: 20%;
+        background-color: #e9e9e9;
+        padding: 15px;
+    }
+    ul{
+        list-style-type: none;
+        margin: 10px;
+    }
+    li{
+        margin: 15px;
+    }
+    .big_menu{
+        font-size: 20px;
+    }
+    .small_menu{
+        font-size: 15px;
+        color: #646464;
+    }
+</style>
 </html>
