@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="jquery-3.6.0.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,8 @@
             <ul class="small_menu">
                 <li> <a href="#today"> 오늘 </a></li>
                 <li> <a href="#tomorrow"> 내일 </a></li>
-                <li>어제</li>
-                <li>미래</li>
+                <li> <a href="#yesterday">어제</a></li>
+                <li> <a href="#future">미래</a></li>
             </ul>
             <hr style="margin:10px 0px;">
             <li>전체 일정</li>
@@ -52,6 +53,7 @@
             <h1>앞으로의 일정</h1>
         </div>
     </article>
+    <script type="text/javascript" src="todolist.js"></script>
 </body>
 <style>
     *{
@@ -67,7 +69,12 @@
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
+        overflow: visible;
+        -ms-overflow-style: none;
+    }
+    body::-webkit-scrollbar { 
+        display: none;
+        width: 0 !important;
     }
     @font-face {
         font-family: "lavender";
@@ -126,6 +133,10 @@
     }
     .content{
         height: 100vh;
+        margin-top: -80px;
+        padding-top: 80px;
+        margin-left: -320px;
+        padding-left: 320px;
     }
 </style>
 </html>
