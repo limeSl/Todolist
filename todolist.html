@@ -14,7 +14,7 @@
     </header>
     <nav>
         <ul class="big_menu">
-            <li>ToDo</li>
+            <li>리스트</li>
             <ul class="small_menu">
                 <li> <a href="#today"> 오늘 </a></li>
                 <li> <a href="#tomorrow"> 내일 </a></li>
@@ -24,19 +24,23 @@
             <hr style="margin:10px 0px;">
             <li>전체 일정</li>
             <ul class="small_menu">
-                <li>캘린더</li>
-                <li>과목별 정리</li>
-                <li>분류별 보기</li>
+                <li><a href="#calendar">캘린더</a></li>
+                <li><a href="#subjectVeiw">과목별 정리</a></li>
+                <li><a href="#categoryVeiw">분류별 보기</a></li>
             </ul>
             <hr style="margin:10px 0px;">
             <li>일상 관리</li>
             <ul class="small_menu">
-                <li>취미</li>
-                <li>발전</li>
-                <li>인간관계</li>
+                <li><a href="#hobby">취미</a></li>
+                <li><a href="#selfDev">발전</a></li>
+                <li><a href="#relationship">인간관계</a></li>
             </ul>
             <hr style="margin:10px 0px;">
             <li>잊어버린 일</li>
+            <ul class="small_menu">
+                <li><a href="#hwDeadline">과제 마감시간</a></li>
+                <li><a href="#attendance">출석 마감시간</a></li>
+            </ul>
         </ul>
     </nav>
     <article>
@@ -52,6 +56,31 @@
         <div class = "content" id="future">
             <h1>앞으로의 일정</h1>
         </div>
+        <div class="content" id="calendar">
+            <h1>캘린더</h1>
+        </div>
+        <div class="content" id="subjectVeiw">
+            <h1>과목별 정리</h1>
+        </div>
+        <div class="content" id="categoryVeiw">
+            <h1>분류별 정리</h1>
+        </div>
+        <div class="content" id="hobby">
+            <h1>취미 관리</h1>
+        </div>
+        <div class="content" id="selfDev">
+            <h1>자기개발 관리</h1>
+        </div>
+        <div class="content" id="relationship">
+            <h1>관계 관리</h1>
+        </div>
+        <div class="content" id="hwDeadline">
+            <h1>과제 마감시간</h1>
+        </div>
+        <div class="content" id="attendance">
+            <h1>출석 마감시간</h1>
+        </div>
+        
     </article>
     <script type="text/javascript" src="todolist.js"></script>
 </body>
