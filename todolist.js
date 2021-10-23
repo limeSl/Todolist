@@ -33,10 +33,12 @@ document.querySelector(".year-month").textContent =
  }
 
  const dates = prevDates.concat(thisDates, nextDates);
+ const firstDateIndex = dates.indexOf(1);
+ const lastDateIndex = dates.lastIndexOf(TLDate);
 
  dates.forEach((date, i )=>{
-    dates[i] ='<div class="date">${date}</div>';
- })
+    dates[i] = `<div class="date">${date}</div>`;
+ });
 
  document.querySelector('.dates').innerHTML = dates.join('');
  
