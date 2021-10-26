@@ -104,3 +104,41 @@ div{
     margin-top: 20px;
     flex: 1;
 }
+.year-month{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.days{
+    display: flex;
+    width: 1050px;
+    margin: 10px 0px 5px ;
+}
+.day{
+    width:calc(100%/7);
+    text-align: center;
+}
+.dates{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1050px;
+    height: 450px;
+    border-top: 1px solid #666666;
+    border-right: 1px solid #666666;
+}
+.date{
+    width:119px;
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #666666;
+    border-left: 1px solid #666666;
+}
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+  color: #D13E3E;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+  color: #396EE2;
+}
