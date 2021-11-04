@@ -1,3 +1,10 @@
+const schedule={
+    date : "11/3",
+    subject : "프로그래밍 개론",
+    category : "과제",
+    account : "마나오링",
+}
+
 function addSchedule(btn){
     alert('일정 추가')
 }
